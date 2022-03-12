@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  get '/hello', to: 'application#hello_world'
+  resources :reviews
+  resources :steaks
+
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
+  post "/signup", to: "users#create"
+  get "/me", to: "users#show"
+
 end

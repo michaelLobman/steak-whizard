@@ -1,0 +1,2 @@
+class SteaksController < ApplicationController
+end
