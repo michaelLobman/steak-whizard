@@ -1,5 +1,6 @@
 import React from "react";
 import SignUpForm from "./SignUpForm";
+import NavBar from "./NavBar";
 import Button from "react-bootstrap/Badge";
 
 function App() {
