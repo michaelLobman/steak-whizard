@@ -1,7 +1,12 @@
-#signup-container {
+.form-container {
   width: 50%;
 }
 
 .form-group {
   padding: 2% 0;
+}
+
+.show-container {
+  width: 50%;
+  padding: 3% 0;
 }

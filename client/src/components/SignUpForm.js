@@ -7,18 +7,29 @@ function SignUpForm(){
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [location, setLocation] = useState("");
+    const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [favSteak, setFavSteak] = useState("");
+
+    function handleSubmit(e){
+        e.preventDefault();
+        const user = {
+            username,
+            password,
+            password_confirmation: passwordConfirmation,
+            fav_steak: favSteak
+        }
+
+        console.log(user);
+    }
 
 
     return(
-        <Container id="signup-container">
-            <Form id="signup-form">
+        <Container className="form-container">
+            <Form id="signup-form" onSubmit={handleSubmit}>
                 <Form.Group className="form-group">
                     <Form.Label>Username</Form.Label>
                     <Form.Control 
                         type="text"
-                        size="large"
                         onChange={(e => setUsername(e.target.value))}
                     />
                 </Form.Group>
@@ -26,16 +37,24 @@ function SignUpForm(){
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                         type="password"
-                        size="large"
                         onChange={(e => setPassword(e.target.value))}
+                    />
+                </Form.Group>
+                <Form.Group className="form-group">
+                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Control
+                        type="password"
+                        onChange={(e => setPasswordConfirmation(e.target.value))}
                     />
                 </Form.Group>
                 <Form.Group className="form-group">
                     <Form.Select 
                         aria-label="Fav-steak select"
+                        onChange={(e => setFavSteak(e.target.value))}
                     >
                         # Steak options mapped and go here 
                         <option>Placeholder</option>
+                        <option>Placeholder 2</option>
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="form-group">

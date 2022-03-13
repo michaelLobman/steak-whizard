@@ -1,14 +1,14 @@
-import React from "react";
-import SignUpForm from "./SignUpForm";
-import NavBar from "./NavBar";
-import Button from "react-bootstrap/Badge";
+import React, { useState } from "react";
+// import NavBar from "./NavBar";
+import Login from "../pages/Login";
 
 function App() {
-  return (
-    <div className="App">
-      <SignUpForm />
-    </div>
-  );
+
+  const [user, setUser] = useState(null);
+
+  if (!user) return <Login onLogin={setUser} />;
+
+
 }
 
 export default App;
