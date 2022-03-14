@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
 
-function Login({ onLogin }){
+function Login({ onLogin, steaks }){
 
     const [showLogin, setShowLogin] = useState(true);
 
@@ -26,7 +26,7 @@ function Login({ onLogin }){
                 </>
                ) : (
                 <>
-                    <SignUpForm onLogin={onLogin} />
+                    <SignUpForm onLogin={onLogin} steaks={steaks} />
                     <Container className="show-container">
                         <p>Have an account?</p>
                         <Button

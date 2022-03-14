@@ -3,7 +3,7 @@ class SteaksController < ApplicationController
     skip_before_action :authorize, except: :my_steaks
 
     def index
-        render json: Steak.all
+        render json: Steak.order(rating: :desc)
     end
 
     def show
@@ -14,6 +14,6 @@ class SteaksController < ApplicationController
     private 
 
     def find_steak
-        Steak.find(params[:steak_id])
+        Steak.find(params[:id])
     end
 end

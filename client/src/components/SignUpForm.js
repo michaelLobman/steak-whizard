@@ -3,12 +3,16 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
-function SignUpForm(){
+function SignUpForm({ steaks }){
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [favSteak, setFavSteak] = useState("");
+
+    const steakOptions = steaks.map(steak =>  (
+        <option key={steak.id}>{steak.restaurant}</option>
+    ));
 
     function handleSubmit(e){
         e.preventDefault();
@@ -52,9 +56,7 @@ function SignUpForm(){
                         aria-label="Fav-steak select"
                         onChange={(e => setFavSteak(e.target.value))}
                     >
-                        # Steak options mapped and go here 
-                        <option>Placeholder</option>
-                        <option>Placeholder 2</option>
+                        {steakOptions}
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="form-group">

@@ -21,3 +21,9 @@ Steak.create(
     restaurant: "Geno's Steaks",
     rating: 6.5
 )
+
+User.create(
+    username: "mlobman",
+    password: "test",
+    fav_steak: 1
+)
