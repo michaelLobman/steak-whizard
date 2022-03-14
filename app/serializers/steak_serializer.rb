@@ -1,3 +1,3 @@
 class SteakSerializer < ActiveModel::Serializer
-  attributes :id, :restaurant, :toppings, :rating
+  attributes :id, :restaurant, :rating
 end

@@ -8,6 +8,10 @@ function App() {
 
   if (!user) return <Login onLogin={setUser} />;
 
+  return (
+    <p>You are logged in</p>
+  )
+
 
 }
 
