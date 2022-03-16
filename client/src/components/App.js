@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
+import BestSteak from "../pages/BestSteak";
 import Login from "../pages/Login";
+import Reviews from "../pages/Reviews";
 import SteakLanding from "../pages/SteakLanding";
 import NewSteak from "../pages/NewSteak";
 
@@ -9,6 +11,7 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [steaks, setSteaks] = useState([]);
+  // const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     fetch("/me").then(r => {
@@ -30,11 +33,17 @@ function App() {
     <div>
       <NavBar user={user} setUser={setUser} />
       <Switch>
+        <Route path="/best-steak">
+          <BestSteak user={user} setUser={setUser} steaks={steaks} />
+        </Route>
+        <Route path="/reviews">
+          <Reviews user={user} />
+        </Route>
         <Route path="/new-steak">
-          <NewSteak user={user} />
+          <NewSteak user={user} setSteaks={setSteaks} />
         </Route>
         <Route path="/">
-          <SteakLanding user={user} steaks={steaks}/>
+          <SteakLanding user={user} setUser={setUser} steaks={steaks}/>
         </Route>
       </Switch>
     </div>

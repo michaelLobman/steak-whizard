@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :reviews
-  resources :steaks
+  resources :steaks, only: [:index]
+  resources :users, only: [:update]
+
+  get "/steaks/highest-rated", to: "steaks#highest_rated"
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

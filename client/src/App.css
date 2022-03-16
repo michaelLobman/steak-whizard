@@ -10,3 +10,43 @@
   width: 50%;
   padding: 3% 0;
 }
+
+.reviews-h1 {
+  text-align: center;
+  margin: auto;
+  padding: 3%;
+}
+
+.review-card {
+  margin: 2%;
+  /* padding: 2%; */
+  width: 25%;
+}
+
+/* .card-body {
+  padding: 1%;
+}
+
+.toppings-p {
+  margin: 1%;
+} */
+
+.reviews-card-group {
+  padding:1%;
+}
+
+.high-rating {
+  color: rgb(8, 169, 8);
+}
+
+.low-rating {
+  color: rgb(219, 25, 25);
+}
+
+.best-steak-h2 {
+  margin: auto;
+  text-align: center;
+  padding: 5%;
+  font-size: 5vw;
+
+}

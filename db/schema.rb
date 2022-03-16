@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_14_184542) do
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id"
     t.integer "steak_id"
-    t.integer "rating"
+    t.float "rating"
     t.string "title"
     t.text "comment"
     t.text "toppings"
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_14_184542) do
 
   create_table "steaks", force: :cascade do |t|
     t.string "restaurant"
-    t.float "rating"
+    t.float "avg_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
