@@ -1,8 +1,10 @@
 Steak.create(
-    restaurant: "Ishkabibble's"
+    restaurant: "Ishkabibble's",
+    rating: 10.0
 )
 Steak.create(
-    restaurant: "Poe's"
+    restaurant: "Poe's",
+    rating: 9.0
 )
 
 Steak.create(

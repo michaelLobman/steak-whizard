@@ -16,7 +16,7 @@ function BestSteak({ steaks, user, setUser }){
     useEffect(() => {
         fetch("/steaks/highest-rated")
             .then(r => r.json())
-            .then(steak => setSteak(steak));
+            .then(steakArr => setSteak(steakArr[0]));
     }, []);
 
 

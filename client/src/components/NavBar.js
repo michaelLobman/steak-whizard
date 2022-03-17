@@ -13,7 +13,7 @@ function NavBar( { user, setUser }){
                 <Nav className="nav-links">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/best-steak">Best Steak</Nav.Link>
-                    <Nav.Link href="/reviews">Reviews</Nav.Link>
+                    <Nav.Link href="/reviews">My Reviews</Nav.Link>
                     <Nav.Link href="/new-steak">Add Steak</Nav.Link>
                 </Nav>
             </Container>

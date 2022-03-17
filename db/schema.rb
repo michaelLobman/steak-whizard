@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_14_184542) do
 
   create_table "steaks", force: :cascade do |t|
     t.string "restaurant"
-    t.float "avg_rating"
+    t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

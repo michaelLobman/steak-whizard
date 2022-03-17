@@ -1,5 +1,5 @@
 class SteakSerializer < ActiveModel::Serializer
-  attributes :id, :restaurant
+  attributes :id, :restaurant, :rating
 
   has_many :reviews
 

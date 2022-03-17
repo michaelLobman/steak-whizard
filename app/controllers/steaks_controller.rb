@@ -1,6 +1,6 @@
 class SteaksController < ApplicationController
 
-    # skip_before_action :authorize, except: :my_steaks
+    skip_before_action :authorize, except: :my_steaks
 
     def index
         render json: Steak.all
@@ -12,8 +12,8 @@ class SteaksController < ApplicationController
     # end
 
     def highest_rated
-
-        render json: Steak.find(1)
+        max = Steak.maximum(:rating)
+        render json: Steak.where(rating: max)
     end
 
     private 

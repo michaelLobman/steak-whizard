@@ -1,9 +1,15 @@
+import { useState } from "react";
+
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
+
+import ReviewForm from "./ReviewForm";
 
 
 
 function SteakCard({ steak, user, setUser }){
+
+    const [showReviewForm, setShowReviewForm] = useState(false);
 
     function handleClick(){
         let newFav;
@@ -22,15 +28,20 @@ function SteakCard({ steak, user, setUser }){
         })
             .then(r => r.json())
             .then(user => setUser(user))
-
-    
     }
 
+    const previouslyReviewed = user.reviews.find(review => review.steak_id === steak.id) ? true : false
+    const reviewText = previouslyReviewed ? "Already Reviewed" : "Review"
+    const rating = steak.rating ? steak.rating : "N/A"
     const variant = user.fav_steak === steak.id ? "danger" : "success" 
     const text = user.fav_steak === steak.id ? "Unfavorite" : "Favorite"
+
+    // const active = 
     return (
         <ListGroup.Item>
-            {steak.restaurant} | Rating: {steak.rating} <Button onClick={handleClick} variant={variant}>{text}</Button>
+            {steak.restaurant} | Rating: {rating} <Button onClick={handleClick} variant={variant}>{text}</Button>
+            <Button onClick={(() => setShowReviewForm(!showReviewForm))} variant="primary" disabled={previouslyReviewed}>{reviewText}</Button>
+            {showReviewForm ? <ReviewForm steak={steak} user={user} /> : null}
         </ListGroup.Item>
 
     )

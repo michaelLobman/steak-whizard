@@ -17,7 +17,7 @@ function SteakLanding({ steaks, user, setUser }){
     useEffect(() => {
         fetch("/steaks/highest-rated")
             .then(r => r.json())
-            .then(steak => setTopSteak(steak));
+            .then(steak => setTopSteak(steak[0]));
     }, []);
 
     const steakCards = steaks.map(steak => (
