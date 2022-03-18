@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import AddSteak from "../components/AddSteak";
 import ReviewForm from "../components/ReviewForm";
 
 import Button from "react-bootstrap/Button";
@@ -27,34 +28,11 @@ function NewSteak({ setSteaks }){
     }
 
     return (
-        <div>
-            <Container className="form-container">
-                <Form id="new-steak-form" onSubmit={handleSubmit}>
-                    <Form.Group className="form-group">
-                        <Form.Label>Restaurant</Form.Label>
-                        <Form.Control
-                            type="text"
-                            onChange={(e => setRestaurant(e.target.value))}
-                        />
-                    </Form.Group>
-                    <Form.Group className="form-group">
-                        <Form.Label>Favorite?</Form.Label>
-                        <Form.Select 
-                            aria-label="Favorite Steak?"
-                            onChange={(e => setFavSteak(e.target.value))}
-                        >
-                            <option value="true">Absolutely!</option>
-                            <option value="false">Not quite</option>
-                        </Form.Select>
-                    </Form.Group>
-                    <Form.Group className="form-group">
-                        <Button type="submit">Add Steak</Button>
-                    </Form.Group>
-                </Form>
-            </Container>
-            <h3>Leave a review?</h3>
-            <ReviewForm  />
-        </div>
+        <>
+            <AddSteak setSteaks={setSteaks} />
+            <h3>Leave a Review</h3>
+            <ReviewForm />
+        </>
     )
 }
 
