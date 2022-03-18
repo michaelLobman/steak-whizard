@@ -20,7 +20,4 @@ class Steak < ApplicationRecord
         self.reviews.average(:rating)
     end
 
-
-
-
 end

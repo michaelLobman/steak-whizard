@@ -31,17 +31,29 @@ function SteakCard({ steak, user, setUser }){
     }
 
     const previouslyReviewed = user.reviews.find(review => review.steak_id === steak.id) ? true : false
-    const reviewText = previouslyReviewed ? "Already Reviewed" : "Review"
+    // const reviewText = previouslyReviewed ? "Already Reviewed" : "Review"
+
+    let reviewText;
+
+    if (previouslyReviewed) {
+        reviewText = "Already Reviewed";
+    } else if (showReviewForm) {
+        reviewText = "Hide"
+    } else {
+        reviewText = "Review"
+    }
     const rating = steak.rating ? steak.rating : "N/A"
     const variant = user.fav_steak === steak.id ? "danger" : "success" 
-    const text = user.fav_steak === steak.id ? "Unfavorite" : "Favorite"
+    const favText = user.fav_steak === steak.id ? "Unfavorite" : "Favorite"
 
     // const active = 
     return (
         <ListGroup.Item>
-            {steak.restaurant} | Rating: {rating} <Button onClick={handleClick} variant={variant}>{text}</Button>
+            {steak.restaurant} | Rating: {rating} <Button onClick={handleClick} variant={variant}>{favText}</Button>
             <Button onClick={(() => setShowReviewForm(!showReviewForm))} variant="primary" disabled={previouslyReviewed}>{reviewText}</Button>
-            {showReviewForm ? <ReviewForm steak={steak} user={user} /> : null}
+            {showReviewForm ? 
+            <ReviewForm steak={steak} user={user} setUser={setUser} show={showReviewForm} setShow={setShowReviewForm} /> : 
+            null}
         </ListGroup.Item>
 
     )

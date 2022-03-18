@@ -20,7 +20,7 @@
 .review-card {
   margin: 2%;
   /* padding: 2%; */
-  width: 25%;
+  /* width: 10%; */
 }
 
 /* .card-body {
@@ -49,4 +49,8 @@
   padding: 5%;
   font-size: 5vw;
 
+}
+
+button {
+  margin: .5vw;
 }
