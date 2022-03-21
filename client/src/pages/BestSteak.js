@@ -32,10 +32,10 @@ function BestSteak({ steaks, user, setUser }){
         <Container>
             <h2 className="best-steak-h2">Top Steak: {steak.restaurant}</h2>
             <h3 className="best-steak-h3">What People are Saying</h3>
-            <Image fluid="true" src={steakImg}/>
             <CardGroup className="reviews-card-group">
                 {reviewCards}
             </CardGroup>
+            <Image fluid="true" src={steakImg}/>
         </Container>
     )
     // const topThree = steaks.slice(0, 3)

@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 import BestSteak from "../pages/BestSteak";
 import Login from "../pages/Login";
 import Reviews from "../pages/Reviews";
-import SteakLanding from "../pages/SteakLanding";
+import Home from "../pages/Home";
 import NewSteak from "../pages/NewSteak";
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
           <NewSteak user={user} setSteaks={setSteaks} />
         </Route>
         <Route path="/">
-          <SteakLanding user={user} setUser={setUser} steaks={steaks}/>
+          <Home user={user} setUser={setUser} steaks={steaks}/>
         </Route>
       </Switch>
     </div>

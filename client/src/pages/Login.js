@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import LoginForm from "../components/LoginForm";
+import NavBar from "../components/NavBar";
 import SignUpForm from "../components/SignUpForm";
 
 function Login({ onLogin, steaks }){
@@ -10,6 +11,7 @@ function Login({ onLogin, steaks }){
 
     return(
         <div>
+            <NavBar />
             {showLogin ? (
                 <>
                     <LoginForm onLogin={onLogin} />
@@ -26,7 +28,7 @@ function Login({ onLogin, steaks }){
                 </>
                ) : (
                 <>
-                    <SignUpForm onLogin={onLogin} steaks={steaks} />
+                    <SignUpForm onSignUp={onLogin} steaks={steaks} />
                     <Container className="show-container">
                         <p>Have an account?</p>
                         <Button

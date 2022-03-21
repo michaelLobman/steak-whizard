@@ -1,9 +1,9 @@
 class SteaksController < ApplicationController
 
-    skip_before_action :authorize, except: :my_steaks
+    skip_before_action :authorize
 
     def index
-        render json: Steak.all
+        render json: Steak.order(rating: :desc)
     end
 
     # def show
