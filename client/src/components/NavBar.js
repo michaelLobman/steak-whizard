@@ -23,13 +23,10 @@ function NavBar( { user, setUser }){
 
 
     return (
-        <Navbar bg="light">
+        <Navbar bg="light" variant="light">
             <Container>
                 <Navbar.Brand href="/">Steak Whizard</Navbar.Brand>
                 {navbarText}
-                {/* <Navbar.Text>
-                    Welcome, {user.username}!
-                </Navbar.Text> */}
                 <Nav className="nav-links">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/best-steak">Best Steak</Nav.Link>
