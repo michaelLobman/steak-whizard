@@ -1,6 +1,4 @@
-import { ListGroup } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import List from "react-bootstrap/ListGroup";
 
 function ReviewCard({ review }){
 
@@ -17,7 +15,6 @@ function ReviewCard({ review }){
             <Card.Header as="h3">{restaurant} | <span className={ratingClass}>{rating}</span></Card.Header>
             <Card.Body>
                 <Card.Title className="review-title mx-auto">{title}</Card.Title>
-                {/* <Card.Subtitle>{review.user} */}
                 <Card.Text>{comment}</Card.Text>
                 <Card.Text>With: {toppings}</Card.Text>
             </Card.Body>

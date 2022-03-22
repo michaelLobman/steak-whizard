@@ -1,6 +1,4 @@
-import CardGroup from "react-bootstrap/CardGroup";
 import Container from "react-bootstrap/Container";
-import ListGroup from "react-bootstrap/ListGroup";
 import ReviewCard from "../components/ReviewCard";
 
 
@@ -12,9 +10,7 @@ function Reviews({ user }){
     return (
         <Container>
             <h1 className="reviews-h1">Your Reviews</h1>
-            <CardGroup className="reviews-card-group">
-                {reviewCards}
-            </CardGroup>
+            {reviewCards}
         </Container>
     )
 }
