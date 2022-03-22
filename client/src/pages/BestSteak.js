@@ -7,8 +7,6 @@ import CardGroup from "react-bootstrap/CardGroup";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 
-
-
 function BestSteak({ steaks, user, setUser }){
 
     const [steak, setSteak] = useState("tbd");
@@ -30,28 +28,14 @@ function BestSteak({ steaks, user, setUser }){
 
     return ( 
         <Container>
-            <h2 className="best-steak-h2">Top Steak: {steak.restaurant}</h2>
-            <h3 className="best-steak-h3">What People are Saying</h3>
+            <h2 id="best-steak-h2">Top Steak: {steak.restaurant}</h2>
+            <h3 id="best-steak-h3">What People are Saying</h3>
             <CardGroup className="reviews-card-group">
                 {reviewCards}
             </CardGroup>
             <Image fluid="true" src={steakImg}/>
         </Container>
     )
-    // const topThree = steaks.slice(0, 3)
-
-    // const steakCards = topThree.map(steak => (
-    //     <SteakCard key={steak.id} steak={steak} user={user} setUser={setUser}/>
-    // ))
-
-    // return (
-    //     <Container>
-    //         <h1 className="vote-h1">Vote for the Best Steak!</h1>
-    //         <ListGroup>
-    //             {steakCards}
-    //         </ListGroup>
-    //     </Container>
-    // )
 }
 
 export default BestSteak;
