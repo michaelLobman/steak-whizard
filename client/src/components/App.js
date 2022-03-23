@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div>
-      <NavBar user={user} setUser={setUser} />
+      {user ? <NavBar user={user} setUser={setUser} /> : null }
       <Switch>
         <Route path="/best-steak">
           <BestSteak user={user} setUser={setUser} steaks={steaks} />
