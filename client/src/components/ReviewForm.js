@@ -14,10 +14,6 @@ function ReviewForm({ steak, setUser, show, setShow }){
     const [toppings, setToppings] = useState("");
 
     const [errors, setErrors] = useState([]);
-    
-
-    // send steak.restaurant in fetch, id as well
-    // user
 
     function handleSubmit(e){
         e.preventDefault();
