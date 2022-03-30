@@ -5,7 +5,6 @@ function ReviewCard({ review }){
     const { rating, title, comment, toppings, restaurant } = review
 
     let ratingClass;
-
     if (rating > 7) ratingClass = "high-rating";
     if (rating < 4) ratingClass = "low-rating";
     

@@ -1,14 +1,20 @@
 import { useState } from "react";
 
+import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 
-function AddSteak({ setSteaks }){
+function AddSteak({ setSteak }){
 
     const [restaurant, setRestaurant] = useState("");
-    const [rating, setRating] = useState(0);
     const [favSteak, setFavSteak] = useState("");
+    const [errors, setErrors] = useState([]);
+
+    const renderedErrors = errors.map(error => (
+        <Alert key={error} variant="danger">{error}</Alert>
+
+    ))
 
     function handleSubmit(e){
         e.preventDefault();
@@ -17,9 +23,23 @@ function AddSteak({ setSteaks }){
 
         const newSteak = {
             restaurant,
-            rating,
-            favBoolean
+            fav_boolean: favBoolean
         };
+
+        fetch('/steaks', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json", 
+            },
+            body: JSON.stringify(newSteak)
+        })
+        .then(r => {
+            if (r.ok) {
+                r.json().then(steak => setSteak(steak));
+            } else {
+                r.json().then(error => setErrors(error.errors))
+            }
+        })
 
         console.log(newSteak);
     }
@@ -46,6 +66,9 @@ function AddSteak({ setSteaks }){
                 </Form.Group>
                 <Form.Group className="form-group">
                     <Button type="submit">Add Steak</Button>
+                </Form.Group>
+                <Form.Group className="form-group">
+                    {renderedErrors}
                 </Form.Group>
             </Form>
         </Container>

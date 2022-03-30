@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :reviews, only: [:create]
-  resources :steaks, only: [:index]
+  resources :steaks, only: [:index, :create]
   resources :users, only: [:update]
 
   get "/steaks/highest-rated", to: "steaks#highest_rated"

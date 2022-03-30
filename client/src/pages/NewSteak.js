@@ -3,36 +3,23 @@ import { useState } from "react";
 import AddSteak from "../components/AddSteak";
 import ReviewForm from "../components/ReviewForm";
 
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
+function NewSteak(){
 
-function NewSteak({ setSteaks }){
-
-    const [restaurant, setRestaurant] = useState("");
-    const [rating, setRating] = useState(0);
-    const [favSteak, setFavSteak] = useState("");
-
-    function handleSubmit(e){
-        e.preventDefault();
-
-        const favBoolean = favSteak === "true" ? true : false
-
-        const newSteak = {
-            restaurant,
-            rating,
-            favBoolean
-        };
-
-        console.log(newSteak);
-    }
-
+    const [steak, setSteak] = useState("");
+    
     return (
         <>
-            <h3 className="review-h3">Gimme Steak</h3>
-            <AddSteak setSteaks={setSteaks} />
-            <h3 className="review-h3">Leave a Review</h3>
-            <ReviewForm />
+            {steak ? (
+                <>
+                    <h3 className="review-h3">Review {steak.restaurant}</h3>
+                    <ReviewForm steak={steak}/>
+                </>
+            ) : (
+                <>
+                    <h3 className="review-h3">Gimme Steak</h3>
+                    <AddSteak setSteak={setSteak} />
+                </>
+            )}
         </>
     )
 }
