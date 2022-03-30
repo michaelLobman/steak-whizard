@@ -1,5 +1,3 @@
-require 'pry'
-
 class SteaksController < ApplicationController
 
     # skip_before_action :authorize
