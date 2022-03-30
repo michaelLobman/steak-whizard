@@ -29,8 +29,9 @@ function NewSteak({ setSteaks }){
 
     return (
         <>
+            <h3 className="review-h3">Gimme Steak</h3>
             <AddSteak setSteaks={setSteaks} />
-            <h3>Leave a Review</h3>
+            <h3 className="review-h3">Leave a Review</h3>
             <ReviewForm />
         </>
     )
