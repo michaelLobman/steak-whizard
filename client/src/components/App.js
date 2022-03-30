@@ -33,16 +33,16 @@ function App() {
     <div>
       {user ? <NavBar user={user} setUser={setUser} /> : null }
       <Switch>
-        <Route path="/best-steak">
+        <Route exact path="/best-steak">
           <BestSteak user={user} setUser={setUser} steaks={steaks} />
         </Route>
-        <Route path="/reviews">
+        <Route exact path="/reviews">
           <Reviews user={user} />
         </Route>
-        <Route path="/new-steak">
+        <Route exact path="/new-steak">
           <NewSteak user={user} setSteaks={setSteaks} />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Home user={user} setUser={setUser} steaks={steaks}/>
         </Route>
       </Switch>
