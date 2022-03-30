@@ -12,6 +12,7 @@ function Login({ onLogin, steaks }){
         <div>
             {showLogin ? (
                 <>
+                    <h1 id="login-h1">Steak Whizard</h1>
                     <LoginForm onLogin={onLogin} />
                     <Container className="show-container">
                         <p>Don't have an account?</p>
