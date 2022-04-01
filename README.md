@@ -8,33 +8,32 @@ Steak Whizard is a place for Philly cheesesteak lovers to determine once and for
 
 ## Usage
 
-When you first arrive at the Steak Whizard, you will be asked to sign up for an account if you don't already have one. Once you sign up, you will be brought to the home page which the lists the current steaks in the database:
+### Home
+
+When you first arrive at the Steak Whizard, you will be asked to sign up for an account if you don't already have one. Once you sign up, you will be brought to the home page which lists the current steaks in the database. Feel free to select your favorite and leave a corresponding review!
 
 ![Home Page](./images/home-page.png)
 
+### Best Steak
 
+The Best Steak page highlights the current top-rated steak in the database and includes its respective reviews.
 
+![Best Steak](./images/best-steak.png)
 
+### My Reviews
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The place to find your personal reviews of the steaks you have enjoyed (and not enjoyed).
 
-Things you may want to cover:
+![My Reviews](./images/my-reviews.png)
 
-* Ruby version
+### Add Steak
 
-* System dependencies
+Is your favorite steak missing? Add it here with a good rating and it may have a shot at the top spot!
 
-* Configuration
+![Add Steak](./images/add-steak.png)
 
-* Database creation
+## Support
 
-* Database initialization
+This is just the beginning. I plan on building out the functionality and styling of the site until it truly can help us find the best steak.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you have any suggestions, questions, or Philly stories, email me at michael.lobman@gmail.com.
