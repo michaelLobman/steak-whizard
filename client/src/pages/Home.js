@@ -1,11 +1,6 @@
-import { useEffect, useState } from "react";
-
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
 import SteakCard from "../components/SteakCard"
-
-
-
 
 function Home({ steaks, user, setUser }){
 

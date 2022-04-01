@@ -15,6 +15,10 @@ function ReviewForm({ steak, setUser, show, setShow }){
 
     const [errors, setErrors] = useState([]);
 
+    const renderedErrors = errors.map(error => (
+        <Alert key={error} variant="danger">{error}</Alert>
+    ))
+
     function handleSubmit(e){
         e.preventDefault();
         const review = {
@@ -86,7 +90,12 @@ function ReviewForm({ steak, setUser, show, setShow }){
                         onChange={(e => setToppings(e.target.value))}
                     />
                 </Form.Group>
-                <Button type="submit" variant="success">Submit</Button>
+                <Form.Group className="form-group">
+                    <Button type="submit" variant="success">Submit</Button>
+                </Form.Group>
+                <Form.Group className="form-group">
+                    {renderedErrors}
+                </Form.Group>
 
             </Form>
 

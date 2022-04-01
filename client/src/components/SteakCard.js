@@ -31,7 +31,6 @@ function SteakCard({ steak, user, setUser }){
     }
 
     const previouslyReviewed = user.reviews.find(review => review.steak_id === steak.id) ? true : false
-    // const reviewText = previouslyReviewed ? "Already Reviewed" : "Review"
 
     let reviewText;
 

@@ -7,7 +7,7 @@ import CardGroup from "react-bootstrap/CardGroup";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 
-function BestSteak({ steaks, user, setUser }){
+function BestSteak(){
 
     const [steak, setSteak] = useState("tbd");
 
@@ -17,14 +17,10 @@ function BestSteak({ steaks, user, setUser }){
             .then(steakArr => setSteak(steakArr[0]));
     }, []);
 
-
     const reviewCards = steak.reviews ? 
         steak.reviews.map(review => (
             <ReviewCard key={review.id} review={review} />
         )) : null ;
-
-
-    
 
     return ( 
         <Container>

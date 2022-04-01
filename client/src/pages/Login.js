@@ -40,13 +40,9 @@ function Login({ onLogin, steaks }){
                         </Button>
                     </Container>
                 </>
-
             )}
-
         </div>
     )
-
-
 }
 
 export default Login;

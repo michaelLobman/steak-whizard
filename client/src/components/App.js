@@ -11,7 +11,6 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [steaks, setSteaks] = useState([]);
-  // const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     fetch("/me").then(r => {
