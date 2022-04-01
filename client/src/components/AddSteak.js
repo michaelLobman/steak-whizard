@@ -40,8 +40,6 @@ function AddSteak({ setSteak }){
                 r.json().then(error => setErrors(error.errors))
             }
         })
-
-        console.log(newSteak);
     }
 
     return (

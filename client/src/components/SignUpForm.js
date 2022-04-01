@@ -30,8 +30,6 @@ function SignUpForm({ steaks, onSignUp }){
             password_confirmation: passwordConfirmation,
             fav_steak: parseInt(favSteak)
         }
-        console.log(user);
-
 
         fetch("/signup", {
             method: "POST",

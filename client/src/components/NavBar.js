@@ -10,7 +10,6 @@ function NavBar( { user, setUser }){
 
     function handleClick(e){
         e.preventDefault();
-        console.log("Logging out");
         fetch("/logout", {
             method: "DELETE"
         })

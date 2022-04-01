@@ -18,8 +18,6 @@ function LoginForm({ onLogin }){
             password
         };
 
-        console.log(user);
-
         fetch("/login", {
             method: "POST",
             headers: {
