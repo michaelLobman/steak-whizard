@@ -38,7 +38,8 @@ function ReviewForm({ steak, setUser, show, setShow }){
         })
             .then(r => {
                 if (r.ok) {
-                    r.json().then(updatedUser => setUser(updatedUser))
+                    r.json().then(updatedUser => setUser(updatedUser));
+                    setShow(!show)
                 } else {
                     r.json().then(err => setErrors(err.errors));
                 }
@@ -48,7 +49,6 @@ function ReviewForm({ steak, setUser, show, setShow }){
         setComment("");
         setRating("");
         setToppings("");
-        setShow(!show)
     }
 
 
