@@ -39,7 +39,7 @@ function App() {
           <Reviews user={user} />
         </Route>
         <Route exact path="/new-steak">
-          <NewSteak user={user} setSteaks={setSteaks} />
+          <NewSteak setUser={setUser} />
         </Route>
         <Route exact path="/">
           <Home user={user} setUser={setUser} steaks={steaks}/>

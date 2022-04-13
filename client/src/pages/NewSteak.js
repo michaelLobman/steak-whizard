@@ -3,11 +3,12 @@ import { useState } from "react";
 import AddSteak from "../components/AddSteak";
 import ReviewForm from "../components/ReviewForm";
 
-function NewSteak(){
+function NewSteak({ setUser }){
 
     const [steak, setSteak] = useState("");
     const [show, setShow] = useState(false);
-    const reviewDisplay = show ? <h3 className="review-h3">Thank you for your review!</h3> : <ReviewForm steak={steak} setShow={setShow} />
+    
+    const reviewDisplay = show ? <h3 className="review-h3">Thank you for your review!</h3> : <ReviewForm setUser={setUser} steak={steak} setShow={setShow} />
     
     return (
         <>
