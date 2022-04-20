@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:update]
 
   get "/steaks/highest-rated", to: "steaks#highest_rated"
+  get "/steaks/high-to-low", to: "steaks#high_to_low"
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

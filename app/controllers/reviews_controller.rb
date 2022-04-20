@@ -7,7 +7,6 @@ class ReviewsController < ApplicationController
         render json: @current_user, status: :created
     end
 
-
     private
 
     def review_params
